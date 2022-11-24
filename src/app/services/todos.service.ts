@@ -16,11 +16,10 @@ export class TodosService {
 
   saveTodo(todo: string) {
     const id = generateId();
-    this.todos.next([...this.todos.value, { id, todo, completed: false }]);
+    this.todos.next([{ id, todo, completed: false }, ...this.todos.value]);
   }
 
   setCompleted(todoId: string, completed: boolean) {
-    console.log('completed');
     const todos = this.todos.value.map((todo) => {
       if (todo.id !== todoId) return todo;
 
@@ -28,7 +27,6 @@ export class TodosService {
     });
 
     this.todos.next([...todos]);
-    console.log(JSON.stringify(this.todos.value));
   }
 
   deleteTodo(todoId: string) {
