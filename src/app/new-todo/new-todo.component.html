@@ -1,0 +1,7 @@
+<input
+  type="text"
+  placeholder="What's on your mind!"
+  class="text-black p-4 rounded w-full shadow-lg"
+  #input
+  (keydown.enter)="saveTodo(input.value, input)"
+/>

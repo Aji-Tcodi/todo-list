@@ -1,0 +1,17 @@
+<div class="text-black p-4 w-full">
+  <div class="flex items-center justify-between">
+    <label class="flex-1 flex items-center checkbox">
+      <input
+        type="checkbox"
+        (change)="completed(input.checked)"
+        [checked]="todo.completed"
+        #input
+        class="mr-4"
+      />
+      <span class="flex-1 font-normal">{{ todo.todo }}</span>
+      <span class="checkmark"></span> </label
+    ><span class="icon" title="delete" (click)="deleteItem()"
+      ><span></span><span></span
+    ></span>
+  </div>
+</div>
